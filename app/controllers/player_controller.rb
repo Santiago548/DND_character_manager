@@ -8,5 +8,33 @@ class PlayerController < ApplicationController
     get "/" do
       
     end
+
+    get "/player" do
+
+    end
   
+    get '/player/new' do
+
+    end
+
+    post '/player' do
+
+    end
+
+    get '/player/:id' do
+
+    end
+
+    get '/player/:id/edit' do
+
+    end
+
+    patch '/player/:id' do
+
+    end
+
+    delete '/player/:id' do
+
+    end
+    
   end
