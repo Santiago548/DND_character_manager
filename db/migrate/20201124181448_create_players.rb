@@ -5,5 +5,6 @@ class CreatePlayers < ActiveRecord::Migration
       t.string :name
       t.integer :age
       t.date :birthdate
+    end
   end
 end

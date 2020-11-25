@@ -16,5 +16,7 @@ class CreateCharacters < ActiveRecord::Migration
       t.string :weapon_proficiencies
       t.string :armor_proficiencies
       t.string :languages
+      t.integer :player_id
+    end
   end
 end
