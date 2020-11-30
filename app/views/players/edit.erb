@@ -1,0 +1,21 @@
+<h1>Update Player</h1>
+
+<h2>Edits for <%= @player.name %></h2>
+
+  <form action="/player/<%= @player.id %>" method="POST">
+    <input id="hidden" type="hidden" name="_method" value="patch">
+    <label>Edit Username:</label>
+    <input type="text" name="player[username]" value="<%= @player.username %>">
+    <label>Edit Email:</label>
+    <input type="text" name="player[email]" value="<%= @player.email %>">
+    <label>Edit Name:</label>
+    <input type="text" name="player[name]" value="<%= @player.name %>">
+    <label>Edit age:</label>
+    <input type="number" name="player[age]" value="<%= @player.age %>">
+    <label>Edit birthdate:</label>
+    <input type="date" name="player[birthdate]" value="<%= @player.birthdate %>">
+
+    <br>
+
+    <input type="submit" value="Update Player">
+  </form>

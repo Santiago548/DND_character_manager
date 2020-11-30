@@ -4,32 +4,31 @@ class PlayerController < ApplicationController
       set :public_folder, 'public'
       set :views, 'app/views'
     end
-  
-    get "/" do
-      
-    end
 
     get '/player' do
       @players = Player.all
-      erb :'players/show'
+      erb :'/players/index'
     end
 
-    get '/player/new' do
+    get '/signup' do #new
       @players = Player.all
       @characters = Character.all
-      erb :'players/new'
+      erb :'/players/signup'
     end
 
     post '/player' do
-
+      #@player = Player.create(params[:player])
+      #redirect "/players/#{@player.id}"
     end
 
     get '/player/:id' do
-
+      @player = Player.find_by_id(1)
+      erb :'/players/show'
     end
 
     get '/player/:id/edit' do
-
+      @player = Player.find_by_id(1)
+      erb :'/players/edit'
     end
 
     patch '/player/:id' do
