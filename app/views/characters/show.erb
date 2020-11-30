@@ -1,0 +1,10 @@
+<h1>Characters</h1>
+
+ <% @characters.each do |character| %>
+  <div class="character">
+    <h3>Name: <%= character.character_name %></h3>
+    <h4>Class: <%= character.character_class %></h3>
+    <h4>Level: <%= character.character_level %></h3>
+    <h4>Race: <%= character.character_race %></h3>
+  </div><br>
+<% end %>

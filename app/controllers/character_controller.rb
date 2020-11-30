@@ -10,7 +10,8 @@ class CharacterController < ApplicationController
     end
 
     get '/character' do
-
+      @characters = Character.all
+      erb :'characters/show'
     end
 
     get '/character/new' do

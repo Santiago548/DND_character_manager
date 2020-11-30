@@ -9,12 +9,15 @@ class PlayerController < ApplicationController
       
     end
 
-    get "/player" do
-
+    get '/player' do
+      @players = Player.all
+      erb :'players/show'
     end
-  
-    get '/player/new' do
 
+    get '/player/new' do
+      @players = Player.all
+      @characters = Character.all
+      erb :'players/new'
     end
 
     post '/player' do
