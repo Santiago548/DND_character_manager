@@ -16,16 +16,17 @@ class PlayerController < ApplicationController
   end
 
   post '/signup' do
+    binding.pry
     @player = Player.create(params[:player])
     redirect "/player/#{@player.id}"
   end
 
-  get '/player/:id' do
+  get '/player/:id' do #find an individual player
     @player = Player.find(params[:id])
     erb :'/players/show'
   end
   
-  get '/player/:id/edit' do
+  get '/player/:id/edit' do #edit an individial player
     @player = Player.find(params[:id])
     erb :'/players/edit'
   end

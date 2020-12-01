@@ -1,1 +1,15 @@
-<%= "hello face" %>
+<h1><%= "Welcome to the D&D character manager<h1>" %></h1><br>
+<form method="post" action="/login">
+<h2><%= "Sign in " %></h2><br>
+  <label>Username:</label>
+  <input type="text" id="username" name="player[username]"><br>
+  Or<br>
+  <label>Email:</label>
+  <input type="email" id="email" name="player[email]"><br>
+  <label>Password:</label>
+  <input type="password" id="password" name="player[password]"><br>
+</form><br>
+<h3> OR </h3>
+<h4><%= "Sign up as a new Player" %><br></h4>
+<h4><%= "Create a new Character" %></h4>
+</form>
