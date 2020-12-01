@@ -2,15 +2,15 @@
 
 <form action="/signup" method="POST">
   <label>Username:</label>
-  <input type="text" id="username" name="player[username]">
+  <input type="text" id="username" name="player[username]"><br>
   <label>Email:</label>
-  <input type="email" id="email" name="player[email]">
+  <input type="email" id="email" name="player[email]"><br>
   <label>Password:</label>
-  <input type="password" id="password" name="player[password]">
+  <input type="password" id="password" name="player[password]"><br>
   <label>Name:</label>
-  <input type="text" id="pname" name="player[name]">
+  <input type="text" id="pname" name="player[name]"><br>
   <label>Age:</label>
-  <input type="number" id="age" name="player[age]">
+  <input type="number" id="age" name="player[age]"><br>
   <label>Birthdate:</label>
   <input type="date" id="birthdate" name="player[birthdate]">
 
@@ -19,7 +19,7 @@
 
 
   <h3>Existing Characters</h3>
-  <% @characters.each do |pet| %>
+  <% @characters.each do |character| %>
     <input type="checkbox" name="player[character_ids][]" id="<%= character.id %>" value="<%= character.id %>"><%= character.character_name %><br>
   <% end %>
   <br>

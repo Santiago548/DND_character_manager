@@ -16,7 +16,7 @@ class PlayerController < ApplicationController
   end
 
   post '/signup' do
-    binding.pry
+    #binding.pry
   end
 
   get '/player/:id' do
