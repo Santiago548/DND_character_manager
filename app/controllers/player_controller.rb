@@ -6,17 +6,18 @@ class PlayerController < ApplicationController
 
   get '/player' do
     @players = Player.all
-    erb :'/players/index'
+    erb :'players/index'
   end
 
   get '/signup' do #new
     @players = Player.all
     @characters = Character.all
-    erb :'/players/signup'
+    erb :'players/signup'
   end
 
   post '/signup' do
-    #binding.pry
+    @player = Player.create(params[:player])
+    redirect "/player/#{@player.id}"
   end
 
   get '/player/:id' do
