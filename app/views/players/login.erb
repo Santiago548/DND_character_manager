@@ -1,6 +1,5 @@
-<% if flash[:message] %>
-<%= flash[:message] %>
-<form action="/signin" method="POST">
+
+<form action="/login" method="POST">
 <h2><%= "Sign in " %></h2><br>
   <label>Username:</label>
   <input type="text" name="player[username]"><br>

@@ -1,4 +1,4 @@
-
+require 'pry'
 
 class PlayerController < ApplicationController
   configure do
@@ -23,12 +23,12 @@ class PlayerController < ApplicationController
     redirect to "/player/#{@player.id}"
   end
 
-  get '/signin' do 
-    erb :'players/signin'
+  get '/login' do 
+    erb :'players/login'
   end
   
-  post '/signin' do
- 
+  post '/login' do
+    
   end
 
   get '/player/:id' do #find an individual player
