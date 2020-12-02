@@ -1,0 +1,13 @@
+<% if flash[:message] %>
+<%= flash[:message] %>
+<form action="/signin" method="POST">
+<h2><%= "Sign in " %></h2><br>
+  <label>Username:</label>
+  <input type="text" name="player[username]"><br>
+  OR<br>
+  <label>Email:</label>
+  <input type="email" name="player[email]"><br>
+  <label>Password:</label>
+  <input type="password" name="player[password]"><br>
+  <input type="submit" value="Sign In">
+</form><br>

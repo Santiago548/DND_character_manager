@@ -9,6 +9,4 @@ ActiveRecord::Base.establish_connection(
 )
 
 require './app/controllers/application_controller'
-require './app/controllers/character_controller'
-require './app/controllers/player_controller'
 require_all 'app'

@@ -1,3 +1,5 @@
+
+
 class PlayerController < ApplicationController
   configure do
     set :public_folder, 'public'
@@ -5,6 +7,7 @@ class PlayerController < ApplicationController
   end
 
   get '/player' do
+    logged_in?
     @players = Player.all
     erb :'players/index'
   end
@@ -16,9 +19,16 @@ class PlayerController < ApplicationController
   end
 
   post '/signup' do
-    binding.pry
     @player = Player.create(params[:player])
-    redirect "/player/#{@player.id}"
+    redirect to "/player/#{@player.id}"
+  end
+
+  get '/signin' do 
+    erb :'players/signin'
+  end
+  
+  post '/signin' do
+ 
   end
 
   get '/player/:id' do #find an individual player
@@ -35,5 +45,9 @@ class PlayerController < ApplicationController
   end
   
   delete '/player/:id' do
+  end
+
+  get '/logout' do
+    
   end
 end
