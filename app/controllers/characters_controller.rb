@@ -1,9 +1,4 @@
-class CharacterController < ApplicationController
-  
-  configure do
-    set :public_folder, 'public'
-    set :views, 'app/views'
-  end
+class CharactersController < ApplicationController
 
   get '/character' do
     @characters = Character.all
