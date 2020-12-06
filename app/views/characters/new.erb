@@ -1,0 +1,54 @@
+<form method="post" action="/new">
+ <label>Name:</label>
+    <input type="text" name="character[character_name]"><br>
+    <label>LvL:</label>
+    <input type="text" name="character[character_level]" ><br>
+    <label>Class:</label>
+    <input type="text" name="character[character_class]"><br>
+    <label>Race:</label>
+    <input type="text" name="character[character_race]"><br>
+    <label>Armor Class:</label>
+    <input type="number" name="character[armor_class]"><br>
+    <label for="speed">Speed:</label>
+    <select name="character[character_speed]">
+      <option value="5">5ft</option>
+      <option value="10">10ft</option>
+      <option value="15">15ft</option>
+      <option value="20">20ft</option>
+      <option value="25">25ft</option>
+      <option value="30">30ft</option>
+      <option value="35">35ft</option>
+      <option value="40">40ft</option>
+      <option value="45">45ft</option>
+      <option value="50">50ft</option>
+    </select><br>
+    <label>Strength:</label>
+    <input type="number" name="character[character_strength]"><br>
+    <label>Dexterity:</label>
+    <input type="number" name="character[character_dexterity]"><br>
+    <label>Constitution:</label>
+    <input type="number" name="character[character_constitution]"><br>
+    <label>Intelligence:</label>
+    <input type="number" name="character[character_intelligence"><br>
+    <label>Wisdom:</label>
+    <input type="number" name="character[character_wisdom]"><br>
+    <label>Charisma:</label>
+    <input type="number" name="character[character_charisma]"><br>
+    <label>Weapon Proficiencies:</label>
+    <input type="text" name="character[weapon_proficiencies]"><br>
+    <label>Armor Proficiencies:</label>
+    <input type="text" name="character[armor_proficiencies]"><br>
+    <fieldset>
+    <legend>Languages</legend>
+    <input type="checkbox" name="character[languages]" ><label for="common">Common</label>
+    <input type="checkbox" name="character[languages]" ><label for="dwarvish">Dwarvish</label>
+    <input type="checkbox" name="character[languages]" ><label for="elvish">Elvish</label>
+    <input type="checkbox" name="character[languages]" ><label for="gnomish">Gnomish</label>
+    <input type="checkbox" name="character[languages]" ><label for="goblin">Goblin</label>
+    <input type="checkbox" name="character[languages]" ><label for="halfling">Halfling</label>
+    <input type="checkbox" name="character[languages]" ><label for="orc">Orc</label><br/>
+    </fieldset><br>
+
+
+    <input type="submit" value="Create Character">
+  </form>

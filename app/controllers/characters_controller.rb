@@ -6,11 +6,14 @@ class CharactersController < ApplicationController
   end
 
   get '/character/new' do
-  
+    @players = Player.all
+    @characters = Character.all
+    erb :'characters/new'
   end
 
   post '/character' do
-  
+    @character = Character.create(params[:character])
+    redirect to "/character/#{@character.id}"
   end
 
   get '/character/:id' do
