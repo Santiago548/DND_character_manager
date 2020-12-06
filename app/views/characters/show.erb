@@ -1,10 +1,21 @@
-<h1>Characters</h1>
+<h1>Character Information</h1>
 
   <div class="character">
-    <h3>Name: <%= @character.character_name %></h3>
-    <h4>Class: <%= @character.character_class %></h3>
-    <h4>Level: <%= @character.character_level %></h3>
-    <h4>Race: <%= @character.character_race %></h3>
+    <h2>Name: <%= @character.character_name %></h2>
+    <h3>Level: <%= @character.character_level %></h3>
+    <h3>Class: <%= @character.character_class %></h3>
+    <h3>Race: <%= @character.character_race %></h3>
+    <h3>Armor Class: <%= @character.armor_class %></h3>
+    <h3>Speed: <%= @character.character_speed %> Feet</h3>
+    <h3>Strength: +<%= @character.character_strength %></h3>
+    <h3>Dexterity: +<%= @character.character_dexterity %></h3>
+    <h3>Constitution: +<%= @character.character_constitution %></h3>
+    <h3>Intelligence: +<%= @character.character_intelligence %></h3>
+    <h3>Wisodm: +<%= @character.character_wisdom %></h3>
+    <h3>Charisma: +<%= @character.character_charisma %></h3>
+    <h3>Weapon Proficiencies: <%= @character.weapon_proficiencies %></h3>
+    <h3>Armor Proficiencies: <%= @character.armor_proficiencies %></h3>
+    <h3>languages: <%= @character.languages %></h3>
   </div><br>
-<% end %>
+
 

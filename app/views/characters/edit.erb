@@ -1,23 +1,34 @@
 <h1>Update Player</h1>
 
-<h2>Edits for <%= @character.name %></h2>
+<h2>Edits for <%= @character.character_name %></h2>
 
   <form action="/character/<%= @character.id %>" method="POST">
     <input id="hidden" type="hidden" name="_method" value="patch">
     <label>Edit Name:</label>
-    <input type="text" name="character[character_name]" value="<%= @player.character_name %>"><br>
-    <label>Edit Lvl:</label>
-    <input type="text" name="character[character_level]" value="<%= @player.character_level %>"><br>
+    <input type="text" name="character[character_name]" value="<%= @character.character_name %>"><br>
+    <label>Edit LvL:</label>
+    <input type="text" name="character[character_level]" value="<%= @character.character_level %>"><br>
     <label>Edit Class:</label>
     <input type="text" name="character[character_class]" value="<%= @character.character_class %>"><br>
     <label>Edit Race:</label>
     <input type="text" name="character[character_race]" value="<%= @character.character_race %>"><br>
-    <label>Edit AC:</label>
+    <label>Edit Armor Class:</label>
     <input type="number" name="character[armor_class]" value="<%= @character.armor_class %>"><br>
-    <label>Edit Speed:</label>
-    <input type="number" name="character[character_speed]" value="<%= @character.character_speed %>"><br>
+    <label for="speed">Edit speed:</label>
+    <select name="character[character_speed]">
+      <option value="5">5ft</option>
+      <option value="10">10ft</option>
+      <option value="15">15ft</option>
+      <option value="20">20ft</option>
+      <option value="25">25ft</option>
+      <option value="30">30ft</option>
+      <option value="35">35ft</option>
+      <option value="40">40ft</option>
+      <option value="45">45ft</option>
+      <option value="50">50ft</option>
+    </select><br>
     <label>Edit Strength:</label>
-    <input type="number" name=characterr[character_strength]" value="<%= @character.character_strength %>"><br>
+    <input type="number" name="character[character_strength]" value="<%= @character.character_strength %>"><br>
     <label>Edit Dexterity:</label>
     <input type="number" name="character[character_dexterity]" value="<%= @character.character_dexterity %>"><br>
     <label>Edit Constitution:</label>
@@ -29,13 +40,22 @@
     <label>Edit Charisma:</label>
     <input type="number" name="character[character_charisma]" value="<%= @character.character_charisma %>"><br>
     <label>Edit Weapon Proficiencies:</label>
-    <input type="number" name="character[character_speed]" value="<%= @character.weapon_proficiencies %>"><br>
+    <input type="text" name="character[weapon_proficiencies]" value="<%= @character.weapon_proficiencies %>"><br>
     <label>Edit Armor Proficiencies:</label>
-    <input type="number" name="character[armor_proficiencies]" value="<%= @character.armor_proficiencies %>"><br>
-    <label>Edit languages:</label>
-    <input type="number" name="character[languages]" value="<%= @player.languages %>"><br>
+    <input type="text" name="character[armor_proficiencies]" value="<%= @character.armor_proficiencies %>"><br>
+    <fieldset>
+    <legend>Edit Languages</legend>
+    <input type="checkbox" name="character[languages]" value="<%= @character.languages %>" ><label for="common">Common</label>
+    <input type="checkbox" name="character[languages]" value="<%= @character.languages %>" ><label for="dwarvish">Dwarvish</label>
+    <input type="checkbox" name="character[languages]" value="<%= @character.languages %>" ><label for="elvish">Elvish</label>
+    <input type="checkbox" name="character[languages]" value="<%= @character.languages %>" ><label for="gnomish">Gnomish</label>
+    <input type="checkbox" name="character[languages]" value="<%= @character.languages %>" ><label for="goblin">Goblin</label>
+    <input type="checkbox" name="character[languages]" value="<%= @character.languages %>" ><label for="halfling">Halfling</label>
+    <input type="checkbox" name="character[languages]" value="<%= @character.languages %>" ><label for="orc">Orc</label><br/>
+    </fieldset><br>
 
 
-    <input type="submit" value="Update Player">
+    <input type="submit" value="Update Character">
   </form>
-    "player_id"
+    
+    # "player_id"
