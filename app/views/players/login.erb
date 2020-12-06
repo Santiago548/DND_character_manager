@@ -1,5 +1,7 @@
 
-<% binding.pry %>
+<% if flash[:message] %>
+  <%= flash[:message]%>
+  <% end %>
 <form action="/login" method="POST">
 <h2><%= "Sign in " %></h2><br>
   <label>Username:</label>

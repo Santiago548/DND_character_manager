@@ -1,0 +1,41 @@
+<h1>Update Player</h1>
+
+<h2>Edits for <%= @character.name %></h2>
+
+  <form action="/character/<%= @character.id %>" method="POST">
+    <input id="hidden" type="hidden" name="_method" value="patch">
+    <label>Edit Name:</label>
+    <input type="text" name="character[character_name]" value="<%= @player.character_name %>"><br>
+    <label>Edit Lvl:</label>
+    <input type="text" name="character[character_level]" value="<%= @player.character_level %>"><br>
+    <label>Edit Class:</label>
+    <input type="text" name="character[character_class]" value="<%= @character.character_class %>"><br>
+    <label>Edit Race:</label>
+    <input type="text" name="character[character_race]" value="<%= @character.character_race %>"><br>
+    <label>Edit AC:</label>
+    <input type="number" name="character[armor_class]" value="<%= @character.armor_class %>"><br>
+    <label>Edit Speed:</label>
+    <input type="number" name="character[character_speed]" value="<%= @character.character_speed %>"><br>
+    <label>Edit Strength:</label>
+    <input type="number" name=characterr[character_strength]" value="<%= @character.character_strength %>"><br>
+    <label>Edit Dexterity:</label>
+    <input type="number" name="character[character_dexterity]" value="<%= @character.character_dexterity %>"><br>
+    <label>Edit Constitution:</label>
+    <input type="number" name="character[character_constitution]" value="<%= @character.character_constitution %>"><br>
+    <label>Edit Intelligence:</label>
+    <input type="number" name="character[character_intelligence" value="<%= @character.character_intelligence %>"><br>
+    <label>Edit Wisdom:</label>
+    <input type="number" name="character[character_wisdom]" value="<%= @character.character_wisdom %>"><br>
+    <label>Edit Charisma:</label>
+    <input type="number" name="character[character_charisma]" value="<%= @character.character_charisma %>"><br>
+    <label>Edit Weapon Proficiencies:</label>
+    <input type="number" name="character[character_speed]" value="<%= @character.weapon_proficiencies %>"><br>
+    <label>Edit Armor Proficiencies:</label>
+    <input type="number" name="character[armor_proficiencies]" value="<%= @character.armor_proficiencies %>"><br>
+    <label>Edit languages:</label>
+    <input type="number" name="character[languages]" value="<%= @player.languages %>"><br>
+
+
+    <input type="submit" value="Update Player">
+  </form>
+    "player_id"
