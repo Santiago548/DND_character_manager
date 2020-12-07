@@ -1,15 +1,73 @@
+<h2>Character Sheet</h2>
 <form method="post" action="/new">
- <label>Name:</label>
-    <input type="text" name="character[character_name]"><br>
-    <label>LvL:</label>
-    <input type="text" name="character[character_level]" ><br>
+    <label>Name:</label>
+      <input type="text" name="character[character_name]"><br><br>
+      <label>LvL:</label>
+      <input type="text" name="character[character_level]" ><br><br>
     <label>Class:</label>
-    <input type="text" name="character[character_class]"><br>
+    <select name="character[character_class]">
+      <option value="barbarian">Barbarian</option>
+      <option value="bard">Bard</option>
+      <option value="cleric">Cleric</option>
+      <option value="druid">Druid</option>
+      <option value="fighter">Fighter</option>
+      <option value="monk">Monk</option>
+      <option value="paladin">Paladin</option>
+      <option value="ranger">Ranger</option>
+      <option value="rogue">Rogue</option>
+      <option value="sorcerer">Sorcerer</option>
+      <option value="warlock">Warlock</option>
+      <option value="wizard">Wizard</option>
+      <option value="artificer">Artificer</option>
+    </select><br><br>
     <label>Race:</label>
-    <input type="text" name="character[character_race]"><br>
+    <select name="character[character_race]">
+      <option value="dragonborn">Dragonborn</option>
+      <option value="dwarf">Dwarf</option>
+      <option value="elf">Elf</option>
+      <option value="gnome">Gnome</option>
+      <option value="half-elf">Half-Elf</option>
+      <option value="halfling">Halfling</option>
+      <option value="half-orc">Half-Orc</option>
+      <option value="human">Human</option>
+      <option value="tiefling">Tiefling</option>
+      <option value="orc of exandria">Orc of Exandria</option>
+      <option value="leonin">Leonin</option>
+      <option value="satyr">Satyr</option>
+      <option value="genasi">Genasi</option>
+      <option value="goliath">Goliath</option>
+      <option value="aasimar">Aasimar</option>
+      <option value="bugbear">Bugbear</option>
+      <option value="firbolg">Firbolg</option>
+      <option value="goblin">Goblin</option>
+      <option value="hobgoblin">Hobgoblin</option>
+      <option value="kenku">Kenku</option>
+      <option value="kobold">Kobold</option>
+      <option value="lizardfolk">Lizardfolk</option>
+      <option value="Orc">Orc</option>
+      <option value="tabaxi">Tabaxi</option>
+      <option value="triton">Triton</option>
+      <option value="yuan-ti pureblood">Yuan-ti Pureblood</option>
+      <option value="feral tiefling">Feral Tiefling</option>
+      <option value="tortle">Tortle</option>
+      <option value="changeling">Changeling</option>
+      <option value="kalashtar">Kalashtar</option>
+      <option value="orc of eberron">Orc of Eberron</option>
+      <option value="shifter">Shifter</option>
+      <option value="warforged">Warforged</option>
+      <option value="gith">Gith</option>
+      <option value="Centaur">Centaur</option>
+      <option value="loxodon">Loxodon</option>
+      <option value="Minotaur">Minotaur</option>
+      <option value="simic hybrid">Simic Hybrid</option>
+      <option value="vedalken">Vedalken</option>
+      <option value="verdan">Verdan</option>
+      <option value="Locathah">Locathah</option>
+      <option value="grung">Grung</option>
+    </select><br><br>
     <label>Armor Class:</label>
-    <input type="number" name="character[armor_class]"><br>
-    <label for="speed">Speed:</label>
+        <input type="number" name="character[armor_class]"><br><br>
+    <label>Speed:</label>
     <select name="character[character_speed]">
       <option value="5">5ft</option>
       <option value="10">10ft</option>
@@ -21,25 +79,77 @@
       <option value="40">40ft</option>
       <option value="45">45ft</option>
       <option value="50">50ft</option>
-    </select><br>
+    </select><br><br>
     <label>Strength:</label>
-    <input type="number" name="character[character_strength]"><br>
+    <select name="character[character_strength]">
+      <option value="1"> +1</option>
+      <option value="2"> +2</option>
+      <option value="3"> +3</option>
+      <option value="4"> +4</option>
+      <option value="5"> +5</option>
+      <option value="6"> +6</option>
+    </select><br><br>
     <label>Dexterity:</label>
-    <input type="number" name="character[character_dexterity]"><br>
+    <select name="character[character_dexterity]">
+      <option value="1"> +1</option>
+      <option value="2"> +2</option>
+      <option value="3"> +3</option>
+      <option value="4"> +4</option>
+      <option value="5"> +5</option>
+      <option value="6"> +6</option>
+    </select><br><br>
     <label>Constitution:</label>
-    <input type="number" name="character[character_constitution]"><br>
+    <select name="character[character_constitution]">
+      <option value="1"> +1</option>
+      <option value="2"> +2</option>
+      <option value="3"> +3</option>
+      <option value="4"> +4</option>
+      <option value="5"> +5</option>
+      <option value="6"> +6</option>
+    </select><br><br>
     <label>Intelligence:</label>
-    <input type="number" name="character[character_intelligence"><br>
+    <select name="character[character_intelligence]">
+      <option value="1"> +1</option>
+      <option value="2"> +2</option>
+      <option value="3"> +3</option>
+      <option value="4"> +4</option>
+      <option value="5"> +5</option>
+      <option value="6"> +6</option>
+    </select><br><br>
     <label>Wisdom:</label>
-    <input type="number" name="character[character_wisdom]"><br>
+    <select name="character[character_wisdom]">
+      <option value="1"> +1</option>
+      <option value="2"> +2</option>
+      <option value="3"> +3</option>
+      <option value="4"> +4</option>
+      <option value="5"> +5</option>
+      <option value="6"> +6</option>
+    </select><br><br>
     <label>Charisma:</label>
-    <input type="number" name="character[character_charisma]"><br>
-    <label>Weapon Proficiencies:</label>
-    <input type="text" name="character[weapon_proficiencies]"><br>
-    <label>Armor Proficiencies:</label>
-    <input type="text" name="character[armor_proficiencies]"><br>
+    <select name="character[character_charisma]">
+      <option value="1"> +1</option>
+      <option value="2"> +2</option>
+      <option value="3"> +3</option>
+      <option value="4"> +4</option>
+      <option value="5"> +5</option>
+      <option value="6"> +6</option>
+    </select><br><br>
     <fieldset>
-    <legend>Languages</legend>
+    <legend>Weapon Proficiencies:</legend>
+    <input type="checkbox" name="character[weapon_proficiencies]" ><label for="simple weapons">Simple Weapons</label>
+    <input type="checkbox" name="character[weapon_proficiencies]" ><label for="martial weapons">Martial Weapons</label>
+    <input type="checkbox" name="character[weapon_proficiencies]" ><label for="exotic weapons">Exotic weapons</label>
+    </fieldset><br>
+
+    <fieldset>
+    <legend>Armor Proficiencies</legend>
+    <input type="checkbox" name="character[armor_proficiencies]" ><label for="light armor">Light Armor</label>
+    <input type="checkbox" name="character[armor_proficiencies]" ><label for="medium armor">Medium Armor</label>
+    <input type="checkbox" name="character[armor_proficiencies]" ><label for="heavy armor">Heavy Armor</label>
+    </fieldset><br>
+
+    <fieldset>
+    <legend>Languages:</legend>
     <input type="checkbox" name="character[languages]" ><label for="common">Common</label>
     <input type="checkbox" name="character[languages]" ><label for="dwarvish">Dwarvish</label>
     <input type="checkbox" name="character[languages]" ><label for="elvish">Elvish</label>
@@ -48,7 +158,6 @@
     <input type="checkbox" name="character[languages]" ><label for="halfling">Halfling</label>
     <input type="checkbox" name="character[languages]" ><label for="orc">Orc</label><br/>
     </fieldset><br>
-
 
     <input type="submit" value="Create Character">
   </form>
