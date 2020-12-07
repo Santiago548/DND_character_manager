@@ -17,5 +17,10 @@
     <h3>Armor Proficiencies: <%= @character.armor_proficiencies %></h3>
     <h3>languages: <%= @character.languages %></h3>
   </div><br>
-
+need to make only accesable for when signed in<br>
+<a href="/character/<%= @character.id %>/edit">Edit player</a>
+<form method="POST" action="/character/<%= @character.id %>">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="submit" value="Delete cahracter">
+</form>
 

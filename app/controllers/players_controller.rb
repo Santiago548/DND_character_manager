@@ -13,8 +13,13 @@ class PlayersController < ApplicationController
   end
 
   post '/signup' do
-    @player = Player.create(params[:player])
-    redirect to "/player/#{@player.id}"
+    player = Player.new(params[:player])
+    if player.save
+      redirect to "/players/#{player.id}"
+    else
+      @errors = player.errors.full_messages
+      erb :'players/signup'
+    end
   end
 
   get '/login' do
@@ -59,3 +64,4 @@ class PlayersController < ApplicationController
     redirect to '/login'
   end
 end
+

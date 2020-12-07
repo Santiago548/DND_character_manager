@@ -1,5 +1,9 @@
 <h1>Create a Player</h1>
-
+<% if @errors %>
+  <% @errors.each do |e|%>
+    <%= e%>
+  <%end%>
+<%end%>
 <form method="post" action="/signup">
   <label>Username:</label>
   <input type="text" id="username" name="player[username]"><br>

@@ -5,3 +5,9 @@
     <h4>Username: <%= @player.username %></h3>
     <h4>Email: <%= @player.email %></h3>
   </div><br>
+  need to make only accesable for when signed in<br>
+<a href="/players/<%= @player.id %>/edit">Edit player</a>
+<form method="POST" action="/players/<%= @player.id %>">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="submit" value="Delete Player">
+</form>
