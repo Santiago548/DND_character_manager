@@ -7,7 +7,7 @@
     <label>Edit Name:</label>
     <input type="text" name="character[character_name]" value="<%= @character.character_name %>"><br>
     <label>Edit LvL:</label>
-    <input type="text" name="character[character_level]" value="<%= @character.character_level %>"><br>
+    <input type="range" name="character[character_level]" min= "0" max = "20" value="<%= @character.character_level %>"><br>
     <label>Edit Class:</label>
     <input type="text" name="character[character_class]" value="<%= @character.character_class %>"><br>
     <label>Edit Race:</label>
@@ -45,13 +45,13 @@
     <input type="text" name="character[armor_proficiencies]" value="<%= @character.armor_proficiencies %>"><br>
     <fieldset>
     <legend>Edit Languages</legend>
-    <input type="checkbox" name="character[languages]" value="<%= @character.languages %>" ><label for="common">Common</label>
-    <input type="checkbox" name="character[languages]" value="<%= @character.languages %>" ><label for="dwarvish">Dwarvish</label>
-    <input type="checkbox" name="character[languages]" value="<%= @character.languages %>" ><label for="elvish">Elvish</label>
-    <input type="checkbox" name="character[languages]" value="<%= @character.languages %>" ><label for="gnomish">Gnomish</label>
-    <input type="checkbox" name="character[languages]" value="<%= @character.languages %>" ><label for="goblin">Goblin</label>
-    <input type="checkbox" name="character[languages]" value="<%= @character.languages %>" ><label for="halfling">Halfling</label>
-    <input type="checkbox" name="character[languages]" value="<%= @character.languages %>" ><label for="orc">Orc</label><br/>
+    <input type="radio" name="character[languages]" value="<%= @character.languages %>" ><label for="common">Common</label>
+    <input type="radio" name="character[languages]" value="<%= @character.languages %>" ><label for="dwarvish">Dwarvish</label>
+    <input type="radio" name="character[languages]" value="<%= @character.languages %>" ><label for="elvish">Elvish</label>
+    <input type="radio" name="character[languages]" value="<%= @character.languages %>" ><label for="gnomish">Gnomish</label>
+    <input type="radio" name="character[languages]" value="<%= @character.languages %>" ><label for="goblin">Goblin</label>
+    <input type="radio" name="character[languages]" value="<%= @character.languages %>" ><label for="halfling">Halfling</label>
+    <input type="radio" name="character[languages]" value="<%= @character.languages %>" ><label for="orc">Orc</label><br/>
     </fieldset><br>
 
 

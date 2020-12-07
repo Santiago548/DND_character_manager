@@ -49,7 +49,7 @@ class PlayersController < ApplicationController
   end
   
   delete '/players/:id' do
-    player = Movie.find_by_id(params[:id])
+    player = Player.find_by_id(params[:id])
     player.destroy
     redirect to '/players'
   end

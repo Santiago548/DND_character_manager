@@ -1,5 +1,5 @@
 <h2>Character Sheet</h2>
-<form method="post" action="/new">
+<form method="POST" action="/character/new">
     <label>Name:</label>
       <input type="text" name="character[character_name]"><br><br>
       <label>LvL:</label>
@@ -80,83 +80,83 @@
       <option value="45">45ft</option>
       <option value="50">50ft</option>
     </select><br><br>
-    <label>Strength:</label>
+    <label>Strength: +</label>
     <select name="character[character_strength]">
-      <option value="1"> +1</option>
-      <option value="2"> +2</option>
-      <option value="3"> +3</option>
-      <option value="4"> +4</option>
-      <option value="5"> +5</option>
-      <option value="6"> +6</option>
+      <option value="1"> 1 / (12)</option>
+      <option value="2"> 2 / (14)</option>
+      <option value="3"> 3 / (16)</option>
+      <option value="4"> 4 / (18)</option>
+      <option value="5"> 5 / (20)</option>
+      <option value="6"> 6 / (22)</option>
     </select><br><br>
-    <label>Dexterity:</label>
+    <label>Dexterity: +</label>
     <select name="character[character_dexterity]">
-      <option value="1"> +1</option>
-      <option value="2"> +2</option>
-      <option value="3"> +3</option>
-      <option value="4"> +4</option>
-      <option value="5"> +5</option>
-      <option value="6"> +6</option>
+      <option value="1"> 1 / (12)</option>
+      <option value="2"> 2 / (14)</option>
+      <option value="3"> 3 / (16)</option>
+      <option value="4"> 4 / (18)</option>
+      <option value="5"> 5 / (20)</option>
+      <option value="6"> 6 / (22)</option>
     </select><br><br>
-    <label>Constitution:</label>
+    <label>Constitution: +</label>
     <select name="character[character_constitution]">
-      <option value="1"> +1</option>
-      <option value="2"> +2</option>
-      <option value="3"> +3</option>
-      <option value="4"> +4</option>
-      <option value="5"> +5</option>
-      <option value="6"> +6</option>
+      <option value="1"> 1 / (12)</option>
+      <option value="2"> 2 / (14)</option>
+      <option value="3"> 3 / (16)</option>
+      <option value="4"> 4 / (18)</option>
+      <option value="5"> 5 / (20)</option>
+      <option value="6"> 6 / (22)</option>
     </select><br><br>
-    <label>Intelligence:</label>
+    <label>Intelligence: +</label>
     <select name="character[character_intelligence]">
-      <option value="1"> +1</option>
-      <option value="2"> +2</option>
-      <option value="3"> +3</option>
-      <option value="4"> +4</option>
-      <option value="5"> +5</option>
-      <option value="6"> +6</option>
+      <option value="1"> 1 / (12)</option>
+      <option value="2"> 2 / (14)</option>
+      <option value="3"> 3 / (16)</option>
+      <option value="4"> 4 / (18)</option>
+      <option value="5"> 5 / (20)</option>
+      <option value="6"> 6 / (22)</option>
     </select><br><br>
-    <label>Wisdom:</label>
+    <label>Wisdom: +</label>
     <select name="character[character_wisdom]">
-      <option value="1"> +1</option>
-      <option value="2"> +2</option>
-      <option value="3"> +3</option>
-      <option value="4"> +4</option>
-      <option value="5"> +5</option>
-      <option value="6"> +6</option>
+      <option value="1"> 1 / (12)</option>
+      <option value="2"> 2 / (14)</option>
+      <option value="3"> 3 / (16)</option>
+      <option value="4"> 4 / (18)</option>
+      <option value="5"> 5 / (20)</option>
+      <option value="6"> 6 / (22)</option>
     </select><br><br>
-    <label>Charisma:</label>
+    <label>Charisma: +</label>
     <select name="character[character_charisma]">
-      <option value="1"> +1</option>
-      <option value="2"> +2</option>
-      <option value="3"> +3</option>
-      <option value="4"> +4</option>
-      <option value="5"> +5</option>
-      <option value="6"> +6</option>
+      <option value="1"> 1 / (12)</option>
+      <option value="2"> 2 / (14)</option>
+      <option value="3"> 3 / (16)</option>
+      <option value="4"> 4 / (18)</option>
+      <option value="5"> 5 / (20)</option>
+      <option value="6"> 6 / (22)</option>
     </select><br><br>
     <fieldset>
     <legend>Weapon Proficiencies:</legend>
-    <input type="checkbox" name="character[weapon_proficiencies]" ><label for="simple weapons">Simple Weapons</label>
-    <input type="checkbox" name="character[weapon_proficiencies]" ><label for="martial weapons">Martial Weapons</label>
-    <input type="checkbox" name="character[weapon_proficiencies]" ><label for="exotic weapons">Exotic weapons</label>
+    <input type="radio" name="character[weapon_proficiencies]" value="simple weapons"><label for="simple weapons">Simple Weapons</label>
+    <input type="radio" name="character[weapon_proficiencies]" value="martial weapons"><label for="martial weapons">Martial Weapons</label>
+    <input type="radio" name="character[weapon_proficiencies]" value="exotic weapons"><label for="exotic weapons">Exotic weapons</label>
     </fieldset><br>
 
     <fieldset>
     <legend>Armor Proficiencies</legend>
-    <input type="checkbox" name="character[armor_proficiencies]" ><label for="light armor">Light Armor</label>
-    <input type="checkbox" name="character[armor_proficiencies]" ><label for="medium armor">Medium Armor</label>
-    <input type="checkbox" name="character[armor_proficiencies]" ><label for="heavy armor">Heavy Armor</label>
+    <input type="radio" name="character[armor_proficiencies]" value="light armor"><label for="light armor">Light Armor</label>
+    <input type="radio" name="character[armor_proficiencies]" value="medeium armor"><label for="medium armor">Medium Armor</label>
+    <input type="radio" name="character[armor_proficiencies]" value="heavy armor"><label for="heavy armor">Heavy Armor</label>
     </fieldset><br>
 
     <fieldset>
     <legend>Languages:</legend>
-    <input type="checkbox" name="character[languages]" ><label for="common">Common</label>
-    <input type="checkbox" name="character[languages]" ><label for="dwarvish">Dwarvish</label>
-    <input type="checkbox" name="character[languages]" ><label for="elvish">Elvish</label>
-    <input type="checkbox" name="character[languages]" ><label for="gnomish">Gnomish</label>
-    <input type="checkbox" name="character[languages]" ><label for="goblin">Goblin</label>
-    <input type="checkbox" name="character[languages]" ><label for="halfling">Halfling</label>
-    <input type="checkbox" name="character[languages]" ><label for="orc">Orc</label><br/>
+    <input type="radio" name="character[languages]" value="common"><label for="common">Common</label>
+    <input type="radio" name="character[languages]" value="dwarvish"><label for="dwarvish">Dwarvish</label>
+    <input type="radio" name="character[languages]" value="elvish"><label for="elvish">Elvish</label>
+    <input type="radio" name="character[languages]" value="gnomish"><label for="gnomish">Gnomish</label>
+    <input type="radio" name="character[languages]" value="goblin"><label for="goblin">Goblin</label>
+    <input type="radio" name="character[languages]" value="halfling"><label for="halfling">Halfling</label>
+    <input type="radio" name="character[languages]" value="orc"><label for="orc">Orc</label><br/>
     </fieldset><br>
 
     <input type="submit" value="Create Character">

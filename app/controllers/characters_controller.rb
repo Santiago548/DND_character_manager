@@ -11,7 +11,7 @@ class CharactersController < ApplicationController
     erb :'characters/new'
   end
 
-  post '/character' do
+  post '/character/new' do
     @character = Character.create(params[:character])
     redirect to "/character/#{@character.id}"
   end
@@ -33,6 +33,8 @@ class CharactersController < ApplicationController
   end
 
   delete '/character/:id' do
-  
+    character = Character.find_by_id(params[:id])
+    character.destroy
+    redirect to '/character'
   end
 end
