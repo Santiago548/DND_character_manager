@@ -1,13 +1,15 @@
-<h1>Players</h1>
-
+<h2>Player Info:</h2>
   <div class="player">
     <h3>Name: <%= @player.name %></h3>
     <h4>Username: <%= @player.username %></h3>
     <h4>Email: <%= @player.email %></h3>
   </div><br>
+  <h2>Player's Characters:</h2>
+  <ul>
+    <%@player.characters.each do |character|%>
+    
+    <li><a href="/character/<%= character.id %>"><%=character.character_name%> the <%=character.character_race.capitalize%>  <%=character.character_class.capitalize%></a></li>
+    <%end%>
+  </ul><br>
   need to make only accesable for when signed in<br>
-<a href="/players/<%= @player.id %>/edit">Edit player</a>
-<form method="POST" action="/players/<%= @player.id %>">
-    <input type="hidden" name="_method" value="DELETE">
-    <input type="submit" value="Delete Player">
-</form>
+ 

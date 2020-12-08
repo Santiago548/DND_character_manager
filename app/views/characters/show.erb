@@ -1,9 +1,38 @@
 <h1>Character Information</h1>
-
+<p>
+  <% case @character.character_class 
+    when "Ranger"%>
+    <img src="/images/ranger.png" alt="Ranger" style="width:50px;height:50px;float:left;">
+    <% when "Artificer" %>
+		<img src="/images/artificer.png" alt="Artificer" style="width:50px;height:50px;float:left;">
+    <% when "Barbarian" %>
+		<img src="/images/barbarian.png" alt="Barbarian" style="width:50px;height:50px;float:left;">
+    <% when "Bard" %>
+		<img src="/images/bard.png" alt="Bard" style="width:50px;height:50px;float:left;">
+    <% when "Druid" %>
+		<img src="/images/druid.png" alt="Druid" style="width:50px;height:50px;float:left;">
+    <% when "Fighter" %>
+		<img src="/images/fighter.png" alt="Fighter" style="width:50px;height:50px;float:left;">
+    <% when "Monk" %>
+		<img src="/images/monk.png" alt="Monk" style="width:50px;height:50px;float:left;">
+    <% when "Paladin" %>
+		<img src="/images/paladin.png" alt="Palading" style="width:50px;height:50px;float:left;">
+    <% when "Cleric" %>
+		<img src="/images/cleric.png" alt="D20" style="width:50px;height:50px;float:left;">
+    <% when "Rogue" %>
+		<img src="/images/rogue.png" alt="D20" style="width:50px;height:50px;float:left;">
+    <% when "Sorcerer" %>
+		<img src="/images/sorcerer.png" alt="D20" style="width:50px;height:50px;float:left;">
+    <% when "Warlock" %>
+		<img src="/images/warlock.png" alt="D20" style="width:50px;height:50px;float:left;">
+    <% when "Wizard" %>
+		<img src="/images/wizard.png" alt="D20" style="width:50px;height:50px;float:left;">
+		<% end %>
+    </p>
   <div class="character">
     <h2>Name: <%= @character.character_name %></h2>
     <h3>Level: <%= @character.character_level %></h3>
-    <h3>Class: <%= @character.character_class %></h3>
+    <h3>Class: <%= @character.character_class.capitalize %></h3>
     <h3>Race: <%= @character.character_race %></h3>
     <h3>Armor Class: <%= @character.armor_class %></h3>
     <h3>Speed: <%= @character.character_speed %> Feet</h3>
@@ -18,10 +47,13 @@
     <h3>languages: <%= @character.languages %></h3>
   </div><br>
   
-need to make only accesable for when signed in<br>
-<a href="/character/<%= @character.id %>/edit">Edit Character</a>
+need to make only accesable for when signed in<br><br>
+<form method="Get" action="/character/<%= @character.id %>/edit">
+    <input type="submit" value="Edit Character">
+</form>
+<br>
 <form method="POST" action="/character/<%= @character.id %>">
     <input type="hidden" name="_method" value="DELETE">
-    <input type="submit" value="Delete cahracter">
+    <input type="submit" value="Delete Character">
 </form>
 

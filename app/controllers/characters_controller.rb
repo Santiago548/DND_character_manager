@@ -12,7 +12,7 @@ class CharactersController < ApplicationController
   end
 
   post '/character/new' do
-    binding.pry
+    #binding.pry
     @character = Character.create(params[:character])
     redirect to "/character/#{@character.id}"
   end
@@ -29,7 +29,7 @@ class CharactersController < ApplicationController
 
   patch '/character/:id' do
     character = Character.find_by_id(params[:id])
-    character.update(params[:player])
+    character.update(params[:character])
     redirect to "/character/#{character.id}"
   end
 
