@@ -1,20 +1,75 @@
-<h1>Update Player</h1>
 
-<h2>Edits for <%= @character.character_name %></h2>
+<h2>Update Character <%= @character.character_name.capitalize %> The <%= @character.character_race.capitalize %> <%= @character.character_class.capitalize %></h2>
 
   <form action="/character/<%= @character.id %>" method="POST">
-    <input id="hidden" type="hidden" name="_method" value="patch">
-    <label>Edit Name:</label>
-    <input type="text" name="character[character_name]" value="<%= @character.character_name %>"><br>
-    <label>Edit LvL:</label>
-    <input type="range" name="character[character_level]" min= "0" max = "20" value="<%= @character.character_level %>"><br>
-    <label>Edit Class:</label>
-    <input type="text" name="character[character_class]" value="<%= @character.character_class %>"><br>
-    <label>Edit Race:</label>
-    <input type="text" name="character[character_race]" value="<%= @character.character_race %>"><br>
-    <label>Edit Armor Class:</label>
-    <input type="number" name="character[armor_class]" value="<%= @character.armor_class %>"><br>
-    <label for="speed">Edit speed:</label>
+    <label>Name:</label>
+      <input type="text" name="character[character_name]" value="<%= @character.character_name %>"><br><br>
+      <label>LvL:</label>
+      <input type="text" name="character[character_level]" value="<%= @character.character_level %>"><br><br>
+    <label>Class:</label>
+    <select name="character[character_class]" value="<%= @character.character_class %>">
+      <option value="barbarian">Barbarian</option>
+      <option value="bard">Bard</option>
+      <option value="cleric">Cleric</option>
+      <option value="druid">Druid</option>
+      <option value="fighter">Fighter</option>
+      <option value="monk">Monk</option>
+      <option value="paladin">Paladin</option>
+      <option value="ranger">Ranger</option>
+      <option value="rogue">Rogue</option>
+      <option value="sorcerer">Sorcerer</option>
+      <option value="warlock">Warlock</option>
+      <option value="wizard">Wizard</option>
+      <option value="artificer">Artificer</option>
+    </select> Current Class: <b><%= @character.character_class.capitalize %></b><br><br>
+    <label>Race:</label>
+    <select name="character[character_race]">
+      <option value="dragonborn">Dragonborn</option>
+      <option value="dwarf">Dwarf</option>
+      <option value="elf">Elf</option>
+      <option value="gnome">Gnome</option>
+      <option value="half-elf">Half-Elf</option>
+      <option value="halfling">Halfling</option>
+      <option value="half-orc">Half-Orc</option>
+      <option value="human">Human</option>
+      <option value="tiefling">Tiefling</option>
+      <option value="orc of exandria">Orc of Exandria</option>
+      <option value="leonin">Leonin</option>
+      <option value="satyr">Satyr</option>
+      <option value="genasi">Genasi</option>
+      <option value="goliath">Goliath</option>
+      <option value="aasimar">Aasimar</option>
+      <option value="bugbear">Bugbear</option>
+      <option value="firbolg">Firbolg</option>
+      <option value="goblin">Goblin</option>
+      <option value="hobgoblin">Hobgoblin</option>
+      <option value="kenku">Kenku</option>
+      <option value="kobold">Kobold</option>
+      <option value="lizardfolk">Lizardfolk</option>
+      <option value="Orc">Orc</option>
+      <option value="tabaxi">Tabaxi</option>
+      <option value="triton">Triton</option>
+      <option value="yuan-ti pureblood">Yuan-ti Pureblood</option>
+      <option value="feral tiefling">Feral Tiefling</option>
+      <option value="tortle">Tortle</option>
+      <option value="changeling">Changeling</option>
+      <option value="kalashtar">Kalashtar</option>
+      <option value="orc of eberron">Orc of Eberron</option>
+      <option value="shifter">Shifter</option>
+      <option value="warforged">Warforged</option>
+      <option value="gith">Gith</option>
+      <option value="Centaur">Centaur</option>
+      <option value="loxodon">Loxodon</option>
+      <option value="Minotaur">Minotaur</option>
+      <option value="simic hybrid">Simic Hybrid</option>
+      <option value="vedalken">Vedalken</option>
+      <option value="verdan">Verdan</option>
+      <option value="Locathah">Locathah</option>
+      <option value="grung">Grung</option>
+    </select> Current Race: <b><%= @character.character_race.capitalize %></b><br><br>
+    <label>Armor Class:</label>
+        <input type="number" name="character[armor_class]"><br><br>
+    <label>Speed:</label>
     <select name="character[character_speed]">
       <option value="5">5ft</option>
       <option value="10">10ft</option>
@@ -26,36 +81,92 @@
       <option value="40">40ft</option>
       <option value="45">45ft</option>
       <option value="50">50ft</option>
-    </select><br>
-    <label>Edit Strength:</label>
-    <input type="number" name="character[character_strength]" value="<%= @character.character_strength %>"><br>
-    <label>Edit Dexterity:</label>
-    <input type="number" name="character[character_dexterity]" value="<%= @character.character_dexterity %>"><br>
-    <label>Edit Constitution:</label>
-    <input type="number" name="character[character_constitution]" value="<%= @character.character_constitution %>"><br>
-    <label>Edit Intelligence:</label>
-    <input type="number" name="character[character_intelligence" value="<%= @character.character_intelligence %>"><br>
-    <label>Edit Wisdom:</label>
-    <input type="number" name="character[character_wisdom]" value="<%= @character.character_wisdom %>"><br>
-    <label>Edit Charisma:</label>
-    <input type="number" name="character[character_charisma]" value="<%= @character.character_charisma %>"><br>
-    <label>Edit Weapon Proficiencies:</label>
-    <input type="text" name="character[weapon_proficiencies]" value="<%= @character.weapon_proficiencies %>"><br>
-    <label>Edit Armor Proficiencies:</label>
-    <input type="text" name="character[armor_proficiencies]" value="<%= @character.armor_proficiencies %>"><br>
-    <fieldset>
-    <legend>Edit Languages</legend>
-    <input type="radio" name="character[languages]" value="<%= @character.languages %>" ><label for="common">Common</label>
-    <input type="radio" name="character[languages]" value="<%= @character.languages %>" ><label for="dwarvish">Dwarvish</label>
-    <input type="radio" name="character[languages]" value="<%= @character.languages %>" ><label for="elvish">Elvish</label>
-    <input type="radio" name="character[languages]" value="<%= @character.languages %>" ><label for="gnomish">Gnomish</label>
-    <input type="radio" name="character[languages]" value="<%= @character.languages %>" ><label for="goblin">Goblin</label>
-    <input type="radio" name="character[languages]" value="<%= @character.languages %>" ><label for="halfling">Halfling</label>
-    <input type="radio" name="character[languages]" value="<%= @character.languages %>" ><label for="orc">Orc</label><br/>
+    </select> Current Speed: <b><%= @character.character_speed %>ft</b><br><br>
+    <label>Abilities</label><br>
+    <fieldset><br>
+    <label>Strength: +</label>
+    <select name="character[character_strength]">
+      <option value="1"> 1 / (12)</option>
+      <option value="2"> 2 / (14)</option>
+      <option value="3"> 3 / (16)</option>
+      <option value="4"> 4 / (18)</option>
+      <option value="5"> 5 / (20)</option>
+      <option value="6"> 6 / (22)</option>
+    </select> Current Strength: <b>+<%= @character.character_strength %></b><br><br>
+    <label>Dexterity: +</label>
+    <select name="character[character_dexterity]">
+      <option value="1"> 1 / (12)</option>
+      <option value="2"> 2 / (14)</option>
+      <option value="3"> 3 / (16)</option>
+      <option value="4"> 4 / (18)</option>
+      <option value="5"> 5 / (20)</option>
+      <option value="6"> 6 / (22)</option>
+    </select> Current Dexterity: <b>+<%= @character.character_dexterity %></b><br><br>
+    <label>Constitution: +</label>
+    <select name="character[character_constitution]">
+      <option value="1"> 1 / (12)</option>
+      <option value="2"> 2 / (14)</option>
+      <option value="3"> 3 / (16)</option>
+      <option value="4"> 4 / (18)</option>
+      <option value="5"> 5 / (20)</option>
+      <option value="6"> 6 / (22)</option>
+    </select> Current Constitution: <b>+<%= @character.character_constitution %></b><br><br>
+    <label>Intelligence: +</label>
+    <select name="character[character_intelligence]">
+      <option value="1"> 1 / (12)</option>
+      <option value="2"> 2 / (14)</option>
+      <option value="3"> 3 / (16)</option>
+      <option value="4"> 4 / (18)</option>
+      <option value="5"> 5 / (20)</option>
+      <option value="6"> 6 / (22)</option>
+    </select> Current Intelligence: <b>+<%= @character.character_intelligence %></b><br><br>
+    <label>Wisdom: +</label>
+    <select name="character[character_wisdom]">
+      <option value="1"> 1 / (12)</option>
+      <option value="2"> 2 / (14)</option>
+      <option value="3"> 3 / (16)</option>
+      <option value="4"> 4 / (18)</option>
+      <option value="5"> 5 / (20)</option>
+      <option value="6"> 6 / (22)</option>
+    </select> Current Wisdom: <b>+<%= @character.character_wisdom %></b><br><br>
+    <label>Charisma: +</label>
+    <select name="character[character_charisma]">
+      <option value="1"> 1 / (12)</option>
+      <option value="2"> 2 / (14)</option>
+      <option value="3"> 3 / (16)</option>
+      <option value="4"> 4 / (18)</option>
+      <option value="5"> 5 / (20)</option>
+      <option value="6"> 6 / (22)</option>
+    </select> Current Charisma: <b>+<%= @character.character_charisma %></b><br><br>
     </fieldset><br>
 
+    <label>Proficiencies</label><br>
+    <fieldset><br>
+    <label>Weapon Proficiencies:</label>
+    <select name="character[weapon_proficienceies]">
+      <option value="<%= @character.weapon_proficiencies %>">Simple Weapons</option>
+      <option value="<%= @character.weapon_proficiencies %>">Martial Weapons</option>
+      <option value="<%= @character.weapon_proficiencies %>">Exotic Weapons</option>
+    </select> Current Weapon Proficiency: <b><%= @character.weapon_proficiencies.capitalize %></b><br><br>
+    <label>Armor Proficiencies</label>
+    <select>
+      <option value="<%= @character.armor_proficiencies %>">Light Armor</option>
+      <option value="<%= @character.armor_proficiencies %>">Medium Armor</option>
+      <option value="<%= @character.armor_proficiencies %>">Heavy Armor</option>
+    </select> Current Armor Proficiency: <b><%= @character.armor_proficiencies.capitalize %></b><br><br>
+    </fieldset><br>
 
-    <input type="submit" value="Update Character">
+    <label>Languages:</label>
+    <select>
+      <option value="<%= @character.languages %>">Common</option>
+      <option value="<%= @character.languages %>">Dwarvish</option>
+      <option value="<%= @character.languages %>">Elvish</option>
+      <option value="<%= @character.languages %>">Gnomish</option>
+      <option value="<%= @character.languages %>">Goblin</option>
+      <option value="<%= @character.languages %>">Halfling</option>
+      <option value="<%= @character.languages %>">Orc</option><br/>
+    </select> Current Language: <b><%= @character.languages.capitalize %></b><br><br>
+
+    <input type="submit" value="Update Character Sheet">
   </form>
-    
-    # "player_id"
+  
