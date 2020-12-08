@@ -12,6 +12,7 @@ class CharactersController < ApplicationController
   end
 
   post '/character/new' do
+    binding.pry
     @character = Character.create(params[:character])
     redirect to "/character/#{@character.id}"
   end

@@ -5,7 +5,7 @@
     <label>Name:</label>
       <input type="text" name="character[character_name]" value="<%= @character.character_name %>"><br><br>
       <label>LvL:</label>
-      <input type="text" name="character[character_level]" value="<%= @character.character_level %>"><br><br>
+      <input type="number" name="character[character_level]" value="<%= @character.character_level %>"><br><br>
     <label>Class:</label>
     <select name="character[character_class]" value="<%= @character.character_class %>">
       <option value="barbarian">Barbarian</option>
@@ -68,88 +68,103 @@
       <option value="grung">Grung</option>
     </select> Current Race: <b><%= @character.character_race.capitalize %></b><br><br>
     <label>Armor Class:</label>
-        <input type="number" name="character[armor_class]"><br><br>
+    <select name="character[armor_class]">
+      <option value=10>10</option>
+      <option value=11>11</option>
+      <option value=12>12</option>
+      <option value=13>13</option>
+      <option value=14>14</option>
+      <option value=15>15</option>
+      <option value=16>16</option>
+      <option value=17>17</option>
+      <option value=18>18</option>
+      <option value=19>19</option>
+      <option value=20>20</option>
+      <option value=21>21</option>
+      <option value=22>22</option>
+    </select> Current AC: <b><%= @character.armor_class %></b><br><br>
+
     <label>Speed:</label>
     <select name="character[character_speed]">
-      <option value="5">5ft</option>
-      <option value="10">10ft</option>
-      <option value="15">15ft</option>
-      <option value="20">20ft</option>
-      <option value="25">25ft</option>
-      <option value="30">30ft</option>
-      <option value="35">35ft</option>
-      <option value="40">40ft</option>
-      <option value="45">45ft</option>
-      <option value="50">50ft</option>
+      <option value=5>5ft</option>
+      <option value=10>10ft</option>
+      <option value=15>15ft</option>
+      <option value=20>20ft</option>
+      <option value=25>25ft</option>
+      <option value=30>30ft</option>
+      <option value=35>35ft</option>
+      <option value=40>40ft</option>
+      <option value=45>45ft</option>
+      <option value=50>50ft</option>
     </select> Current Speed: <b><%= @character.character_speed %>ft</b><br><br>
     <label>Abilities</label><br>
     <fieldset><br>
     <label>Strength: +</label>
     <select name="character[character_strength]">
-      <option value="1"> 1 / (12)</option>
-      <option value="2"> 2 / (14)</option>
-      <option value="3"> 3 / (16)</option>
-      <option value="4"> 4 / (18)</option>
-      <option value="5"> 5 / (20)</option>
-      <option value="6"> 6 / (22)</option>
+      <option value=1> 1 / (12)</option>
+      <option value=2> 2 / (14)</option>
+      <option value=3> 3 / (16)</option>
+      <option value=4> 4 / (18)</option>
+      <option value=5> 5 / (20)</option>
+      <option value=6> 6 / (22)</option>
     </select> Current Strength: <b>+<%= @character.character_strength %></b><br><br>
     <label>Dexterity: +</label>
     <select name="character[character_dexterity]">
-      <option value="1"> 1 / (12)</option>
-      <option value="2"> 2 / (14)</option>
-      <option value="3"> 3 / (16)</option>
-      <option value="4"> 4 / (18)</option>
-      <option value="5"> 5 / (20)</option>
-      <option value="6"> 6 / (22)</option>
+      <option value=1> 1 / (12)</option>
+      <option value=2> 2 / (14)</option>
+      <option value=3> 3 / (16)</option>
+      <option value=4> 4 / (18)</option>
+      <option value=5> 5 / (20)</option>
+      <option value=6> 6 / (22)</option>
     </select> Current Dexterity: <b>+<%= @character.character_dexterity %></b><br><br>
     <label>Constitution: +</label>
     <select name="character[character_constitution]">
-      <option value="1"> 1 / (12)</option>
-      <option value="2"> 2 / (14)</option>
-      <option value="3"> 3 / (16)</option>
-      <option value="4"> 4 / (18)</option>
-      <option value="5"> 5 / (20)</option>
-      <option value="6"> 6 / (22)</option>
+      <option value=1> 1 / (12)</option>
+      <option value=2> 2 / (14)</option>
+      <option value=3> 3 / (16)</option>
+      <option value=4> 4 / (18)</option>
+      <option value=5> 5 / (20)</option>
+      <option value=6> 6 / (22)</option>
     </select> Current Constitution: <b>+<%= @character.character_constitution %></b><br><br>
     <label>Intelligence: +</label>
     <select name="character[character_intelligence]">
-      <option value="1"> 1 / (12)</option>
-      <option value="2"> 2 / (14)</option>
-      <option value="3"> 3 / (16)</option>
-      <option value="4"> 4 / (18)</option>
-      <option value="5"> 5 / (20)</option>
-      <option value="6"> 6 / (22)</option>
+      <option value=1> 1 / (12)</option>
+      <option value=2> 2 / (14)</option>
+      <option value=3> 3 / (16)</option>
+      <option value=4> 4 / (18)</option>
+      <option value=5> 5 / (20)</option>
+      <option value=6> 6 / (22)</option>
     </select> Current Intelligence: <b>+<%= @character.character_intelligence %></b><br><br>
     <label>Wisdom: +</label>
     <select name="character[character_wisdom]">
-      <option value="1"> 1 / (12)</option>
-      <option value="2"> 2 / (14)</option>
-      <option value="3"> 3 / (16)</option>
-      <option value="4"> 4 / (18)</option>
-      <option value="5"> 5 / (20)</option>
-      <option value="6"> 6 / (22)</option>
+      <option value=1> 1 / (12)</option>
+      <option value=2> 2 / (14)</option>
+      <option value=3> 3 / (16)</option>
+      <option value=4> 4 / (18)</option>
+      <option value=5> 5 / (20)</option>
+      <option value=6> 6 / (22)</option>
     </select> Current Wisdom: <b>+<%= @character.character_wisdom %></b><br><br>
     <label>Charisma: +</label>
     <select name="character[character_charisma]">
-      <option value="1"> 1 / (12)</option>
-      <option value="2"> 2 / (14)</option>
-      <option value="3"> 3 / (16)</option>
-      <option value="4"> 4 / (18)</option>
-      <option value="5"> 5 / (20)</option>
-      <option value="6"> 6 / (22)</option>
+      <option value=1> 1 / (12)</option>
+      <option value=2> 2 / (14)</option>
+      <option value=3> 3 / (16)</option>
+      <option value=4> 4 / (18)</option>
+      <option value=5> 5 / (20)</option>
+      <option value=6> 6 / (22)</option>
     </select> Current Charisma: <b>+<%= @character.character_charisma %></b><br><br>
     </fieldset><br>
 
     <label>Proficiencies</label><br>
     <fieldset><br>
     <label>Weapon Proficiencies:</label>
-    <select name="character[weapon_proficienceies]">
+    <select name="character[weapon_proficiencies]">
       <option value="<%= @character.weapon_proficiencies %>">Simple Weapons</option>
       <option value="<%= @character.weapon_proficiencies %>">Martial Weapons</option>
       <option value="<%= @character.weapon_proficiencies %>">Exotic Weapons</option>
     </select> Current Weapon Proficiency: <b><%= @character.weapon_proficiencies.capitalize %></b><br><br>
     <label>Armor Proficiencies</label>
-    <select>
+    <select name=character[armor_proficiencies]>
       <option value="<%= @character.armor_proficiencies %>">Light Armor</option>
       <option value="<%= @character.armor_proficiencies %>">Medium Armor</option>
       <option value="<%= @character.armor_proficiencies %>">Heavy Armor</option>
