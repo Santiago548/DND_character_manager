@@ -23,6 +23,7 @@ class CharactersController < ApplicationController
   end
 
   get '/character/:id/edit' do
+    @players = Player.all
     @character = Character.find(params[:id])
     erb :'/characters/edit'
   end

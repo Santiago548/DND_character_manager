@@ -1,8 +1,13 @@
-<h2>Players</h2>
+<h1>Players</h1>
+<hr>
+<br>
 
 <% @players.each do |player| %>
-  <p><strong>Name:</strong> <%=player.name %></p>
-  <p><strong>Username:</strong> <%=player.username %></p>
-  <p><strong>Email:</strong><%=player.email %></p>
-  <hr>
+<fieldset>
+  <legend><h3>Name: <a href="/players/<%=player.id%>"><%= player.name %></a></h3></legend>
+  <h3><strong>Username:</strong> <%=player.username %></h3>
+  <h3><strong>Email:</strong><%=player.email %></h3>
+  <br>
+  </fieldset>
 <%end%>
+

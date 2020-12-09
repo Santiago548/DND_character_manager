@@ -183,6 +183,12 @@
       <option value="<%= @character.languages %>">Orc</option><br/>
     </select> Current Language: <b><%= @character.languages.capitalize %></b><br><br>
 
+     <h3>Existing Players</h3>
+      <% @players.each do |player| %>
+        <input type="checkbox" name="character[player_id]" id="<%= player.id %>" value="<%= player.id %>"><%= player.name %><br>
+      <% end %>
+      <br>
+
     <input type="submit" value="Update Character Sheet">
   </form>
   

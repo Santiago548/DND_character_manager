@@ -13,3 +13,12 @@
 <h3> OR </h3>
 <h4><%= "Sign up as a new Player" %><br></h4>
 <h4><%= "Create a new Character" %></h4>
+
+<form method="Get" action="/character/<%= @character.id %>/edit">
+    <input type="submit" value="Edit Character">
+</form>
+<br>
+<form method="POST" action="/character/<%= @character.id %>">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="submit" value="Delete Character">
+</form>
