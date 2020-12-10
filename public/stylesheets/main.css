@@ -1,3 +1,5 @@
+
+
 @media screen {
   /* --- Reset Styles --- */
   * {
@@ -12,15 +14,46 @@
   }
 
   /* --- Welcome Page Styles --- */
+
+  a:link {
+    color: rgb(0, 0, 0);
+  }
+  
+  /* visited link */
+  a:visited {
+    color: rgb(0, 0, 0);
+  }
+
+  /* mouse over link */
+  a:hover {
+    color: hotpink;
+  }
+
+  /* selected link */
+  a:active {
+    color: blue;
+  }
+
+  fieldset {
+    background-color: #eeeeee;
+    padding: 10px;
+  }
+
+  legend {
+    background-color: #ccc9c9;
+    color: rgb(0, 0, 0);
+    padding: 2px 10px;
+  }
+  
   body {
-    background-color: lightblue;
+    background-color: #add8e6;
     color: #333;
     font-family: Sans-Serif;
     line-height: 18px;
   }
 
   .wrapper {
-    background: #fff;
+    background: #1f7a8c;
     -moz-box-shadow: 0 0 10px rgba(0,0,0,.3);
     -webkit-box-shadow: 0 0 10px rgba(0,0,0,.3);
     box-shadow: 0 0 10px rgba(0,0,0,.3);
@@ -113,3 +146,4 @@
     line-height: 24px;
   }
 }
+

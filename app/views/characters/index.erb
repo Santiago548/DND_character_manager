@@ -1,11 +1,10 @@
 
 <h1>Characters</h1>
-#make name into link to show page
 
  <% @characters.each do |character| %>
  <fieldset>
   <div class="character">
-  <p> <% case character.character_class 
+  <% case character.character_class 
     when "Ranger"%>
     <img src="/images/ranger.png" alt="Ranger" style="width:50px;height:50px;float:right;">
     <% when "Artificer" %>
@@ -32,7 +31,7 @@
 		<img src="/images/warlock.png" alt="D20" style="width:50px;height:50px;float:left;">
     <% when "Wizard" %>
 		<img src="/images/wizard.png" alt="D20" style="width:50px;height:50px;float:left;">
-		<% end %></p>
+		<% end %>
     <br>
     <h2>Name: <a href="/character/<%=character.id%>"><%= character.character_name %></a></h2>
     <h4>Class: <%= character.character_class %></h4>

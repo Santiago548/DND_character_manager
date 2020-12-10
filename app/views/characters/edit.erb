@@ -1,6 +1,8 @@
 
+<br>
 <h2>Update Character <%= @character.character_name.capitalize %> The <%= @character.character_race.capitalize %> <%= @character.character_class.capitalize %></h2>
-
+<fieldset>
+<legend><b>BASIC INFO:</b></legend>
   <form action="/character/<%= @character.id %>" method="POST">
   <input id="hidden" type="hidden" name="_method" value="patch">
     <label>Name:</label>
@@ -98,8 +100,10 @@
       <option value=45>45ft</option>
       <option value=50>50ft</option>
     </select> Current Speed: <b><%= @character.character_speed %>ft</b><br><br>
-    <label>Abilities</label><br>
+    </fieldset>
+    <br>
     <fieldset><br>
+    <legend><b>ABILITIES:<b></legend>
     <label>Strength: +</label>
     <select name="character[character_strength]">
       <option value=1> 1 / (12)</option>
@@ -155,9 +159,8 @@
       <option value=6> 6 / (22)</option>
     </select> Current Charisma: <b>+<%= @character.character_charisma %></b><br><br>
     </fieldset><br>
-
-    <label>Proficiencies</label><br>
     <fieldset><br>
+    <legend><b>PROFICIENCIES:</b></legend>
     <label>Weapon Proficiencies:</label>
     <select name="character[weapon_proficiencies]">
       <option value="<%= @character.weapon_proficiencies %>">Simple Weapons</option>

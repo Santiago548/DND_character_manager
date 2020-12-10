@@ -1,15 +1,19 @@
 
-<% if flash[:message] %>
-  <%= flash[:message]%>
-  <% end %>
+
 <form action="/login" method="POST">
-<h2><%= "Sign in " %></h2><br>
-  <label>Username:</label>
+<br>
+<h2><%= "SIGN-IN" %></h2>
+<fieldset>
+<% if flash[:message] %>
+  <%= flash[:message]%><br><br>
+  <% end %>
+  <b><label>Username:</label>
   <input type="text" name="player[username]"><br>
   OR<br>
   <label>Email:</label>
   <input type="email" name="player[email]"><br>
-  <label>Password:</label>
-  <input type="password" name="player[password]"><br>
+  <label>Password:</label></b>
+  <input type="password" name="player[password]"><br><br>
   <input type="submit" value="Log In">
 </form><br>
+</fieldset>

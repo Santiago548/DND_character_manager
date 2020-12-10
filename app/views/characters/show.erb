@@ -1,7 +1,6 @@
 <h1>Character Information</h1>
 <fieldset>
-<p>
-  <% case @character.character_class 
+<p><% case @character.character_class 
     when "Ranger"%>
     <img src="/images/ranger.png" alt="Ranger" style="width:50px;height:50px;float:left;">
     <% when "Artificer" %>
@@ -28,9 +27,8 @@
 		<img src="/images/warlock.png" alt="D20" style="width:50px;height:50px;float:left;">
     <% when "Wizard" %>
 		<img src="/images/wizard.png" alt="D20" style="width:50px;height:50px;float:left;">
-		<% end %>
-    </p>
-  <div class="character">
+		<% end %></p>
+<div class="character">
     <h2>Name: <%= @character.character_name %> / Player Name: <%= @character.player.name %></h2>
     <h3>Level: <%= @character.character_level %></h3>
     <h3>Class: <%= @character.character_class.capitalize %></h3>
@@ -46,14 +44,13 @@
     <h3>Weapon Proficiencies: <%= @character.weapon_proficiencies %></h3>
     <h3>Armor Proficiencies: <%= @character.armor_proficiencies %></h3>
     <h3>languages: <%= @character.languages %></h3>
-  </div><br>
-  </fieldset>
-  
-need to make only accesable for when signed in<br><br>
+</div>
+</fieldset>
+<br>
 <form method="Get" action="/character/<%= @character.id %>/edit">
     <input type="submit" value="Edit Character">
 </form>
-<br>
+  <br>
 <form method="POST" action="/character/<%= @character.id %>">
     <input type="hidden" name="_method" value="DELETE">
     <input type="submit" value="Delete Character">
