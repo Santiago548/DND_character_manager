@@ -1,4 +1,8 @@
+<br>
 <h2>Character Sheet</h2>
+
+<fieldset>
+<legend><b>BASIC INFO:</b></legend><b>
 <form method="POST" action="/character/new">
     <label>Name:</label>
       <input type="text" name="character[character_name]"><br><br>
@@ -93,9 +97,11 @@
       <option value="40">40ft</option>
       <option value="45">45ft</option>
       <option value="50">50ft</option>
-    </select><br><br>
-    <label>Abilities</label><br>
-    <fieldset><br>
+    </select><br>
+    </fieldset><br>
+    
+    <fieldset>
+    <legend>ABILITIES:</legend><br>
     <label>Strength: +</label>
     <select type="number" name="character[character_strength]">
       <option value="1"> 1 / (12)</option>
@@ -152,8 +158,8 @@
     </select><br><br>
     </fieldset><br>
     
-    <label>Proficiencies</label><br>
     <fieldset><br>
+    <legend>PROFICIENCIES:</legend>
     <label>Weapon Proficiencies:</label>
     <select name="character[weapon_proficiencies]">
       <option value="Simple Weapons">Simple Weapons</option>
@@ -168,7 +174,8 @@
     </select><br><br>
     </fieldset><br>
 
-    <label>Languages:</label>
+    <fieldset>
+    <legend>LANGUAGES:</legend>
     <select name=character[languages]>
       <option value="Common">Common</option>
       <option value="Dwarvish">Dwarvish</option>
@@ -177,7 +184,9 @@
       <option value="Goblin">Goblin</option>
       <option value="Halfling">Halfling</option>
       <option value="Orc">Orc</option><br/>
-    </select><br><br>
+    </select>
+    </fieldset>
+    </b><br><br>
 
     <input type="submit" value="Create Character">
   </form>

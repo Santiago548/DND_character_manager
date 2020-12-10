@@ -175,7 +175,8 @@
     </select> Current Armor Proficiency: <b><%= @character.armor_proficiencies.capitalize %></b><br><br>
     </fieldset><br>
 
-    <label>Languages:</label>
+    <fieldset>
+    <legend>Languages:</legend>
     <select>
       <option value="<%= @character.languages %>">Common</option>
       <option value="<%= @character.languages %>">Dwarvish</option>
@@ -185,13 +186,15 @@
       <option value="<%= @character.languages %>">Halfling</option>
       <option value="<%= @character.languages %>">Orc</option><br/>
     </select> Current Language: <b><%= @character.languages.capitalize %></b><br><br>
-
-     <h3>Existing Players</h3>
+    </fieldset>
+    <br>
+    <fieldset>
+     <legend>Existing Players</legend>
       <% @players.each do |player| %>
         <input type="checkbox" name="character[player_id]" id="<%= player.id %>" value="<%= player.id %>"><%= player.name %><br>
       <% end %>
-      <br>
-
+      </fieldset>
+    <br>
     <input type="submit" value="Update Character Sheet">
   </form>
   

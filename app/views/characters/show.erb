@@ -29,7 +29,12 @@
 		<img src="/images/wizard.png" alt="D20" style="width:50px;height:50px;float:left;">
 		<% end %></p>
 <div class="character">
-    <h2>Name: <%= @character.character_name %> / Player Name: <%= @character.player.name %></h2>
+    <h2>Name: <%= @character.character_name %> / Player Name: 
+    <% if @character.player %>
+        <%= @character.player.name %>
+    <% else%>
+        "NO ASSOCIATED PLAYER"
+    <%end%>
     <h3>Level: <%= @character.character_level %></h3>
     <h3>Class: <%= @character.character_class.capitalize %></h3>
     <h3>Race: <%= @character.character_race %></h3>

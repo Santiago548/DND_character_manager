@@ -1,11 +1,13 @@
-<h1>Create a Player</h1>
+<br>
+<h2>Create a Player:</h2>
+<fieldset>
 <% if @errors %>
   <% @errors.each do |e| %>
     <%= e%><br>
   <%end%>
 <%end%>
 <form method="post" action="/signup">
-  <label>Username:</label>
+  <b><label>Username:</label>
   <input type="text" id="username" name="player[username]"><br>
   <label>Email:</label>
   <input type="email" id="email" name="player[email]"><br>
@@ -16,16 +18,18 @@
   <label>Age:</label>
   <input type="number" id="age" name="player[age]"><br>
   <label>Birthdate:</label>
-  <input type="date" id="birthdate" name="player[birthdate]">
-
+  <input type="date" id="birthdate" name="player[birthdate]"></b>
+</fieldset>
   <br>
-  <p>Select an existing Character or create a new one below.</p>
+  <h3>Select an existing Character or create a new one below.</h3>
 
 
-  <h3>Existing Characters</h3>
+  <h2>Existing Characters</h2>
+  <fieldset>
   <% @characters.each do |character| %>
     <input type="checkbox" name="player[character_ids][]" id="<%= character.id %>" value="<%= character.id %>"><%= character.character_name %><br>
   <% end %>
+  </fieldset>
   <br>
 
   <input type="submit" value="Create Player">
