@@ -188,5 +188,13 @@
     </fieldset>
     </b><br><br>
 
+ <h2>Associate an Existing Players:</h2>
+  <fieldset>
+  <% @players.each do |player| %>
+    <input type="checkbox" name="character[player_id]" id="<%= player.id %>" value="<%= player.id %>"><%= player.name %><br>
+  <% end %>
+  </fieldset>
+  <br>
+
     <input type="submit" value="Create Character">
   </form>

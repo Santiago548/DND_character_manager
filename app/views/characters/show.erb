@@ -1,4 +1,7 @@
-<h1>Character Information</h1>
+<br>
+<h1>Character Information:</h1>
+<hr>
+<br>
 <fieldset>
 <p><% case @character.character_class 
     when "Ranger"%>
@@ -52,6 +55,11 @@
 </div>
 </fieldset>
 <br>
+<hr>
+<br>
+<fieldset>
+<% if logged_in? && current_player.id == @character.player_id %>
+<br>
 <form method="Get" action="/character/<%= @character.id %>/edit">
     <input type="submit" value="Edit Character">
 </form>
@@ -60,3 +68,10 @@
     <input type="hidden" name="_method" value="DELETE">
     <input type="submit" value="Delete Character">
 </form>
+<% else %>
+  <form method="GET" action="/login">
+  <input type="submit" value="LOG IN"><b> to Edit/Delete Your Character</b>
+  </form>
+</fieldset>
+<% end %>
+

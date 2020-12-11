@@ -6,12 +6,14 @@ class CharactersController < ApplicationController
   end
 
   get '/character/new' do
+    #not_logged_in
     @players = Player.all
     @characters = Character.all
     erb :'characters/new'
   end
 
   post '/character/new' do
+    #not_logged_in
     #binding.pry
     @character = Character.create(params[:character])
     redirect to "/character/#{@character.id}"

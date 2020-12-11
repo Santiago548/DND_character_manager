@@ -1,10 +1,27 @@
 <br>
-<h2>Player Info:</h2>
+<% if logged_in? %> 
+<fieldset>
+  <b>You have succesuffly logged in!!</b>
+<% end %>
+</fieldset>
+<h2><b>Player Info:</b></h2>
   <div class="player">
   <fieldset>
     <legend><h3>Name: <%= @player.name %></h3></legend>
     <h4>Username: <%= @player.username %></h3>
     <h4>Email: <%= @player.email %></h3>
+     <% if logged_in? %> 
+        <h4>Birthdate: <%= @player.birthdate %></h3>
+      <% end %>
+
+
+      <br>
+    <form method="GET" action="/character/new">
+      <input type="submit" value="Create a New Character">
+    </form>
+    <br>
+  
+  
   </fieldset>
   </div><br>
   <h2>Player's Characters:</h2>
