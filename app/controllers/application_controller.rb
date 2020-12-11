@@ -9,7 +9,7 @@ class ApplicationController < Sinatra::Base
     register Sinatra::Flash
   end
 
-  get '/' do
+  get '/home' do
     erb :welcome
   end
 
