@@ -27,6 +27,13 @@
     <div class="wrapper">
     <img src="/images/D20.png" alt="D20" style="width:100px;height:100px;float:right;">
 
+      <% if logged_in? %> 
+     <form method="GET" action="/logout">
+      <input type="submit" value="LOGOUT">
+     </form>
+    <br>
+  <% end %>
+
       <h1>D&D Character Manager APP</h1>
 
         <%= yield %>

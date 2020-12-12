@@ -2,12 +2,12 @@
 <h1><b>Player Info:</b></h1>
 <hr>
 <br>
-<% if logged_in? %> 
+<% if logged_in? && @player.name == current_player.name %> 
 <fieldset>
   <b>You have succesuffly logged in!!</b>
 <% end %>
 </fieldset>
-<%if logged_in?%> 
+<%if logged_in? && @player.name == current_player.name %> 
   <br><hr><br>
 <% end %>
   <div class="player">
@@ -20,7 +20,7 @@
       <% end %>
 
     <br>
-    <% if logged_in? %>
+    <% if logged_in? && @player.name == current_player.name %>
     <form method="GET" action="/character/new">
       <input type="submit" value="Create a New Character">
     </form>
@@ -66,10 +66,7 @@
   <br>
   </fieldset>
   <br>
-  <% if logged_in? %> 
-     <form method="GET" action="/logout">
-      <input type="submit" value="LOGOUT">
-     </form>
+  <% if logged_in? && @player.name == current_player.name %> 
      <form method="GET" action="/players/<%= current_player.id %>/edit">
       <input type="submit" value="EDIT PLAYER">
      </form>
