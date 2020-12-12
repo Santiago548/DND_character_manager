@@ -1,5 +1,5 @@
 <br>
-<h2>Character Sheet</h2>
+<h2>CHARACTER SHEET:</h2>
 
 <fieldset>
 <legend><b>BASIC INFO:</b></legend><b>
@@ -188,7 +188,7 @@
     </fieldset>
     </b><br><br>
 
- <h2>Associate an Existing Players:</h2>
+ <h2>ASSOCIATE AN EXISTING PLAYER(S):</h2>
   <fieldset>
   <% @players.each do |player| %>
     <input type="checkbox" name="character[player_id]" id="<%= player.id %>" value="<%= player.id %>"><%= player.name %><br>

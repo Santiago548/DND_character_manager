@@ -21,7 +21,7 @@
   }
   
   .navbar a:hover, .dropdown:hover .dropbtn {
-    background-color: red;
+    background-color: rgb(14, 13, 13);
   }
   
   .navbar a {
@@ -44,7 +44,7 @@
 
   /* mouse over link */
   a:hover {
-    color: rgb(2, 19, 250);
+    color: rgb(250, 251, 252);
   }
 
   /* selected link */

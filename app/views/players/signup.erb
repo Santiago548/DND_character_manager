@@ -24,11 +24,15 @@
   <h3>Select an existing Character or create a new one below.</h3>
 
 
-  <h2>Existing Characters</h2>
+  <h2>Existing Characters:</h2>
   <fieldset>
   <% @characters.each do |character| %>
+  <% if !!character.player_id == true %>
+    
+  <% else %>
     <input type="checkbox" name="player[character_ids][]" id="<%= character.id %>" value="<%= character.id %>"><%= character.character_name %><br>
   <% end %>
+  <%end%>
   </fieldset>
   <br>
 
