@@ -26,19 +26,6 @@
     </div>
     <div class="wrapper">
     <img src="/images/D20.png" alt="D20" style="width:100px;height:100px;float:right;">
-      <% if logged_in? %> 
-          <form method="GET" action="/logout">
-            <input type="submit" value="LOGOUT">
-          </form>
-          <form method="GET" action="/players/<%= current_player.id %>/edit">
-            <input type="submit" value="EDIT PLAYER">
-          </form>
-          <form method="POST" action="/players/<%= current_player.id %>">
-            <input type="hidden" name="_method" value="DELETE">
-            <input type="submit" value="DELETE PLAYER">
-          </form>
-          <br>
-      <% end %>
 
       <h1>D&D Character Manager APP</h1>
 

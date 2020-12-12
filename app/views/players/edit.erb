@@ -1,4 +1,5 @@
-<h2>UPDATE PLAYER:<%= @player.name %></h2>
+<br>
+<h2>UPDATE PLAYER: <%= @player.name %></h2>
 <fieldset>
   <form action="/player/<%= @player.id %>" method="POST">
     <input id="hidden" type="hidden" name="_method" value="patch">

@@ -1,19 +1,21 @@
-
+<br>
+<h1><b>Player Info:</b></h1>
+<hr>
+<br>
 <% if logged_in? %> 
 <fieldset>
   <b>You have succesuffly logged in!!</b>
 <% end %>
 </fieldset>
-<br>
-<h1><b>Player Info:</b></h1>
-<hr>
-<br>
+<%if logged_in?%> 
+  <br><hr><br>
+<% end %>
   <div class="player">
   <fieldset>
     <legend><h3>Name: <%= @player.name %></h3></legend>
     <h4>Username: <%= @player.username %></h3>
     <h4>Email: <%= @player.email %></h3>
-     <% if logged_in? %> 
+     <% if logged_in? && current_player %> 
         <h4>Birthdate: <%= @player.birthdate %></h3>
       <% end %>
 
@@ -63,5 +65,19 @@
     <%end%>
   <br>
   </fieldset>
+  <br>
+  <% if logged_in? %> 
+     <form method="GET" action="/logout">
+      <input type="submit" value="LOGOUT">
+     </form>
+     <form method="GET" action="/players/<%= current_player.id %>/edit">
+      <input type="submit" value="EDIT PLAYER">
+     </form>
+     <form method="POST" action="/players/<%= current_player.id %>">
+      <input type="hidden" name="_method" value="DELETE">
+      <input type="submit" value="DELETE PLAYER">
+     </form>
+    <br>
+  <% end %>
   
  

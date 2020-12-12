@@ -1,5 +1,5 @@
 <br>
-<h2>Create a Player:</h2>
+<h2>CREATE A PLAYER:</h2>
 <fieldset>
 <% if @errors %>
   <% @errors.each do |e| %>
@@ -21,10 +21,7 @@
   <input type="date" id="birthdate" name="player[birthdate]"></b>
 </fieldset>
   <br>
-  <h3>Select an existing Character or create a new one below.</h3>
-
-
-  <h2>Existing Characters:</h2>
+  <h2>ASSOCIATE AN EXISTING CHARACTER:</h2>
   <fieldset>
   <% @characters.each do |character| %>
   <% if !!character.player_id == true %>
