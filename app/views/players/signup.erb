@@ -1,11 +1,13 @@
 <br>
 <h2>CREATE A PLAYER:</h2>
+
 <fieldset>
 <% if @errors %>
   <% @errors.each do |e| %>
-    <%= e%><br>
+    <b><%=e %>/</b>
   <%end%>
 <%end%>
+<br><br>
 <form method="post" action="/signup">
   <b><label>Username:</label>
   <input type="text" id="username" name="player[username]"><br>
@@ -25,7 +27,9 @@
   <fieldset>
   <% @characters.each do |character| %>
   <% if !!character.player_id == true %>
-    
+  
+  <% elsif character == nil %>
+  
   <% else %>
     <input type="checkbox" name="player[character_ids][]" id="<%= character.id %>" value="<%= character.id %>"><%= character.character_name %><br>
   <% end %>

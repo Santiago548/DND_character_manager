@@ -17,6 +17,7 @@ class PlayersController < ApplicationController
     if player.save
       redirect to "/players/#{player.id}"
     else
+      @characters = Character.all
       @errors = player.errors.full_messages
       erb :'players/signup'
     end
