@@ -15,8 +15,9 @@
     <legend><h3>Name: <%= @player.name %></h3></legend>
     <h4>Username: <%= @player.username %></h3>
     <h4>Email: <%= @player.email %></h3>
-     <% if logged_in? && current_player %> 
+     <% if logged_in? && @player.name == current_player.name  %> 
         <h4>Birthdate: <%= @player.birthdate %></h3>
+        <h4>Age: <%= @player.age %></h3>
       <% end %>
 
     <br>
@@ -25,8 +26,17 @@
       <input type="submit" value="Create a New Character">
     </form>
     <% end %>
-  
   </fieldset>
+
+    <% if !logged_in? %>
+    <br> 
+      <fieldset>
+      <form method="GET" action="/login">
+      <input type="submit" value="LOG IN"> <b>To Edit/Delete your account</b>
+      </fieldset>
+     </form>
+    <% end %>
+
   </div><br>
   <h1>Player's Characters:</h1>
   <hr>
@@ -35,7 +45,7 @@
     <%@player.characters.each do |character|%>
     <% case character.character_class 
     when "Ranger"%>
-    <img src="/images/ranger.png" alt="Ranger" style="width:50px;height:50px;float:right;">
+    <img src="/images/ranger.png" alt="Ranger" style="width:50px;height:50px;float:left;">
     <% when "Artificer" %>
 		<img src="/images/artificer.png" alt="Artificer" style="width:50px;height:50px;float:left;">
     <% when "Barbarian" %>
