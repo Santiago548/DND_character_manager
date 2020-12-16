@@ -58,6 +58,8 @@
 <br>
 <fieldset>
 <% if logged_in? && current_player.id == @character.player_id %>
+<b>EDIT / DELETE YOUR CHARACTER:</b>
+<hr>
 <br>
 <form method="Get" action="/character/<%= @character.id %>/edit">
     <input type="submit" value="Edit Character">
@@ -71,6 +73,6 @@
   <form method="GET" action="/login">
   <input type="submit" value="LOG IN"><b> to Edit/Delete Your Character</b>
   </form>
-</fieldset>
 <% end %>
+</fieldset>
 

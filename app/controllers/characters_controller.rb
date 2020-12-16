@@ -1,20 +1,18 @@
-class CharactersController < ApplicationController
+require 'pry'
 
+class CharactersController < ApplicationController
   get '/character' do
     @characters = Character.all
     erb :'characters/index'
   end
 
   get '/character/new' do
-    #not_logged_in
     @players = Player.all
     @characters = Character.all
     erb :'characters/new'
   end
 
   post '/character/new' do
-    #not_logged_in
-    #binding.pry
     @character = Character.create(params[:character])
     redirect to "/character/#{@character.id}"
   end

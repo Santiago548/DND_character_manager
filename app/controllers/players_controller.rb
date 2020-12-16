@@ -33,7 +33,7 @@ class PlayersController < ApplicationController
       session[:player_id] = player.id
       redirect to "/players/#{player.id}"
     else
-      flash[:message] = "Invalid log in, please try again."
+      flash[:message] = 'Invalid log in, please try again.'
       redirect to '/login'
     end
   end
@@ -65,4 +65,3 @@ class PlayersController < ApplicationController
     redirect to '/'
   end
 end
-

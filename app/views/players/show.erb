@@ -1,6 +1,5 @@
 <br>
-<h1><b>Player Info:</b></h1>
-<hr>
+<h2><b>PLAYER INFO:</b></h2>
 <br>
 <% if logged_in? && @player.name == current_player.name %> 
 <fieldset>
@@ -38,8 +37,7 @@
     <% end %>
 
   </div><br>
-  <h1>Player's Characters:</h1>
-  <hr>
+  <h2>PLAYER'S CHARACTERS:</h2>
   <br>
   <fieldset>
     <%@player.characters.each do |character|%>
