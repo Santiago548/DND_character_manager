@@ -28,11 +28,17 @@ class CharactersController < ApplicationController
     erb :'/characters/edit'
   end
 
+  #
   patch '/character/:id' do
     character = Character.find_by_id(params[:id])
+    if logged_in? && current_player.id == character.player_id
     character.update(params[:character])
     redirect to "/character/#{character.id}"
+    else
+     "not your character"
+    end
   end
+  #
 
   delete '/character/:id' do
     character = Character.find_by_id(params[:id])
