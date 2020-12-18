@@ -23,7 +23,11 @@
   .navbar a:hover, .dropdown:hover .dropbtn {
     background-color: rgb(14, 13, 13);
   }
-  
+
+  .center {
+    text-align: center;
+  }
+
   .navbar a {
     float: left;
     font-size: 16px;
