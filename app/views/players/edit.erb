@@ -17,6 +17,19 @@
     <input type="date" name="player[birthdate]" value="<%= @player.birthdate %>">
 </fieldset>
     <br>
-
+     <br>
+  <h2>ASSOCIATE AN EXISTING CHARACTER:</h2>
+  <fieldset>
+  <% @characters.each do |character| %>
+  <% if !!character.player_id == true %>
+  
+  <% elsif character == nil %>
+  
+  <% else %>
+    <input type="checkbox" name="player[character_ids][]" id="<%= character.id %>" value="<%= character.id %>"><%= character.character_name %><br>
+  <% end %>
+  <%end%>
+  </fieldset>
+  <br>
     <input type="submit" value="Update Player">
   </form>

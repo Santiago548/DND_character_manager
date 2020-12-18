@@ -1,7 +1,18 @@
 <br>
 <h2>CHARACTER SHEET:</h2>
 
+<% if @errors %>
+  <% @errors.each do |e| %>
+    <fieldset>
+    <b><%=e.upcase %></b>
+  <%end%>
+  </fieldset>
+  <br>
+<%end%>
+
 <fieldset>
+<br>
+<br>
 <legend><b>BASIC INFO:</b></legend><b>
 <form method="POST" action="/character/new">
     <label>Name:</label>

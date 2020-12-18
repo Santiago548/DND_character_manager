@@ -44,13 +44,14 @@ class PlayersController < ApplicationController
   end
   
   get '/players/:id/edit' do # edit an individial player
+    @characters = Character.all
     @player = Player.find(params[:id])
     erb :'/players/edit'
   end
   
   patch '/players/:id' do
     player = Player.find_by_id(params[:id])
-    if logged_in? && current_player == player.id
+    if logged_in? && current_player.id == player.id
     player.update(params[:player])
     redirect to "/players/#{player.id}"
     else
@@ -60,7 +61,7 @@ class PlayersController < ApplicationController
   
   delete '/players/:id' do
     player = Player.find_by_id(params[:id])
-    if logged_in? && current_player == player.id
+    if logged_in? && current_player.id == player.id
     player.destroy
     redirect to '/players'
     else

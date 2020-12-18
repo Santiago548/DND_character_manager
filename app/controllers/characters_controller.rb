@@ -13,8 +13,14 @@ class CharactersController < ApplicationController
   end
 
   post '/character/new' do
-    @character = Character.create(params[:character])
-    redirect to "/character/#{@character.id}"
+    @character = Character.new(params[:character])
+    if @character.save
+      redirect to "/character/#{@character.id}"
+    else
+      @players = Player.all
+      @errors = @character.errors.full_messages
+      erb :'characters/new'
+    end
   end
 
   get '/character/:id' do
