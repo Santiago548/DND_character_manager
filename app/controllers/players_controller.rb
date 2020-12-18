@@ -50,14 +50,22 @@ class PlayersController < ApplicationController
   
   patch '/players/:id' do
     player = Player.find_by_id(params[:id])
+    if logged_in? && current_player == player.id
     player.update(params[:player])
     redirect to "/players/#{player.id}"
+    else
+      erb :'players/error'
+    end
   end
   
   delete '/players/:id' do
     player = Player.find_by_id(params[:id])
+    if logged_in? && current_player == player.id
     player.destroy
     redirect to '/players'
+    else
+      erb :'/players/error'
+    end
   end
 
   get '/logout' do

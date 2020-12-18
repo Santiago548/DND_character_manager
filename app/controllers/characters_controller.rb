@@ -18,12 +18,8 @@ class CharactersController < ApplicationController
   end
 
   get '/character/:id' do
-    if @character == true
     @character = Character.find(params[:id])
     erb :'characters/show'
-    else
-      erb :'/characters/error'
-    end
   end
 
   get '/character/:id/edit' do
@@ -32,12 +28,11 @@ class CharactersController < ApplicationController
     erb :'/characters/edit'
   end
 
-  #
   patch '/character/:id' do
     character = Character.find_by_id(params[:id])
-    if logged_in? && current_player == character.player_id
-    character.update(params[:character])
-    redirect to "/character/#{character.id}"
+    if logged_in? && current_player.id == character.player_id
+      character.update(params[:character])
+      redirect to "/character/#{character.id}"
     else
     erb :'/characters/error'
     end
@@ -46,7 +41,7 @@ class CharactersController < ApplicationController
 
   delete '/character/:id' do
     character = Character.find_by_id(params[:id])
-    if logged_in? && current_player == character.player_id
+    if logged_in? && current_player.id == character.player_id
     character.destroy
     redirect to '/character'
     else
