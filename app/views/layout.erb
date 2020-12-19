@@ -20,12 +20,12 @@
 
   <body>
     <div class="navbar">
-      <a href="http://127.0.0.1:9393/">Home</a>
-      <a href="http://127.0.0.1:9393/character">Character List</a>
-      <a href="http://127.0.0.1:9393/players">Player List</a>
+      <a href="http://127.0.0.1:9393/">HOME</a>
+      <a href="http://127.0.0.1:9393/character">CHARACTER LIST</a>
+      <a href="http://127.0.0.1:9393/players">PLAYER LIST</a>
       <% if logged_in? %>
         <% @player_id = current_player.id %>
-        <a href=<%="/players/#{@player_id}"%>>Player's Page</a>
+        <a href=<%="/players/#{@player_id}"%>>PLAYER'S PAGE</a>
       <% end %>
     </div>
     <div class="wrapper">
