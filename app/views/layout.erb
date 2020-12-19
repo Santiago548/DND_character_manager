@@ -23,6 +23,10 @@
       <a href="http://127.0.0.1:9393/">Home</a>
       <a href="http://127.0.0.1:9393/character">Character List</a>
       <a href="http://127.0.0.1:9393/players">Player List</a>
+      <% if logged_in? %>
+        <% @player_id = current_player.id %>
+        <a href=<%="/players/#{@player_id}"%>>Player's Page</a>
+      <% end %>
     </div>
     <div class="wrapper">
     <img src="/images/D20.png" alt="D20" style="width:100px;height:100px;float:right;">
