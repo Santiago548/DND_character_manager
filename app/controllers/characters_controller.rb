@@ -49,7 +49,7 @@ class CharactersController < ApplicationController
     character = Character.find_by_id(params[:id])
     if logged_in? && current_player.id == character.player_id
     character.destroy
-    redirect to '/character'
+    redirect to "/players/#{current_player.id}"
     else
       erb :'/characters/error'
     end

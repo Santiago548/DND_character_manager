@@ -63,7 +63,8 @@ class PlayersController < ApplicationController
     player = Player.find_by_id(params[:id])
     if logged_in? && current_player.id == player.id
     player.destroy
-    redirect to '/players'
+    # need to fix this to redirect to home page and says user was deleted
+    redirect to '/'
     else
       erb :'/players/error'
     end
