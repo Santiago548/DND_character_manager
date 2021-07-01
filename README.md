@@ -4,7 +4,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/Santiago548/repo_name">
-    <img src="frontend\public\images\CHARACTER_MANGER_LOGO.png" alt="Logo" width="400" height="200">
+    <img src="public\images\CHARACTER_MANGER_LOGO.png" alt="Logo" width="400" height="200">
   </a>
 
 # Dnd5e
